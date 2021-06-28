@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hot Mama</title>
+    <title>Cold Mama</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
 
@@ -61,11 +61,12 @@
 
 </style>
 <body>
-  <div id="overlay"> Blink 10 times! </div>
+  <div id="overlay"> ... </div>
 <div id="info">
   <div id="content">
-<h2>Can I be your</h2>
-<h2>VALENTINE!!!</h2>
+<h2>Heart made of ice</h2>
+<h2>heart made of fire</h2>
+<h2>you were all I desire.</h2>
   </div>
 </div>
             <script src="https://unpkg.com/three@0.125.2/build/three.js"></script>
@@ -92,7 +93,7 @@ renderer.toneMapping = THREE.ACESFilmicToneMapping;
 document.body.appendChild(renderer.domElement);
 
 const camera = new THREE.PerspectiveCamera(75, innerWidth / innerHeight);
-camera.position.z = 2;
+camera.position.z = 100;
 
 
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -102,12 +103,12 @@ controls.autoRotate = true;
 const scene = new THREE.Scene();
 
 //bg color
-scene.background = new THREE.Color( 0xc41712 );
+scene.background = new THREE.Color( 0x00008b );
 
 
         new THREE.GLTFLoader().load('scene.gltf', result => { 
           model = result.scene.children[0]; 
-          model.position.set(0,0,0);
+          model.position.set(10,10,500);
           model.traverse(n => { if ( n.isMesh ) {
             n.castShadow = true; 
             n.receiveShadow = true;
